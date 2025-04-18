@@ -1,0 +1,5 @@
+# Match unart device configured by module parameters
+SUBSYSTEM=="tty", ATTR{name}=="unart", MODE="0660", GROUP="dialout"
+
+# Match unart device tree node by name
+SUBSYSTEM=="tty", ATTR{name}=="my-unart", MODE="0660", GROUP="dialout", SYMLINK+="my_unart"

@@ -1,0 +1,14 @@
+/dts-v1/;
+/plugin/;
+
+&{/} {
+	my-unart {
+		compatible = "dsacre,unart";
+		//pinctrl-names = "default";
+		//pinctrl-0 = <&pinctrl_unart>;
+		rx-gpio = <&gpio 22 0>;
+		tx-gpio = <&gpio 23 0>;
+		//rx-skew = <30>;
+		status = "okay";
+	};
+};
