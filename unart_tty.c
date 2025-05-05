@@ -6,6 +6,7 @@
 #include "unart.h"
 
 #include <linux/bitmap.h>
+#include <linux/container_of.h>
 #include <linux/device.h>
 #include <linux/errno.h>
 #include <linux/mutex.h>
@@ -132,7 +133,7 @@ static int unart_tty_port_activate(struct tty_port *port, struct tty_struct *tty
 
 static void unart_tty_port_shutdown(struct tty_port *port)
 {
-	struct unart *unart = port->tty->driver_data;
+	struct unart *unart = container_of(port, struct unart, tty_port);
 
 	unart_rx_shutdown(&unart->rx);
 }
