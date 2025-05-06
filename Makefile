@@ -8,6 +8,9 @@ unart-y := \
 
 ccflags-y := -Wno-declaration-after-statement
 
+ifneq ($(KERNEL_SRC),)
+	KDIR = $(KERNEL_SRC)
+endif
 KDIR ?= /lib/modules/$(shell uname -r)/build
 
 PWD := $(shell pwd)
