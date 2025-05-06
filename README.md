@@ -4,8 +4,16 @@ unart - definitely not a real UART
 unart is a software UART implemented as a Linux kernel module.  
 For when the pins are there, but the UART isn't.
 
-It supports multiple independent instances, each bit-banging on a pair
-of GPIO pins, and exposing a regular TTY serial device to user space.
+
+Features
+--------
+
+- Platform-independent implementation, not limited to any specific SOC.
+- Only bit-banging in hard IRQs, with proper synchronization to other tasks.
+- Regular serial device exposed to user space, compatible with standard applications.
+- Device tree bindings for easy integration and configuration.
+- Support for multiple instances.
+- PREEMPT_RT compatibility (but no dependency).
 
 
 Requirements
