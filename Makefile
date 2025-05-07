@@ -23,7 +23,6 @@ clean:
 
 modules_install: all
 	$(MAKE) -C $(KDIR) M=$(PWD) modules_install
-	depmod -A
 
 dtbs:
 	dtc -@ -I dts -O dtb -o example/unart.dtbo example/unart-overlay.dts

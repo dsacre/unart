@@ -29,10 +29,11 @@ using GPIO expanders.
 Compiling and installing
 ------------------------
 
-To build for your currently running kernel:
+To build and install for your currently running kernel:
 ```sh
 make
 make modules_install
+depmod -A
 ```
 
 To cross-compile or build for a different kernel:
