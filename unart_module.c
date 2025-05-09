@@ -70,8 +70,7 @@ static int unart_manual_device_init(void)
 		return -EINVAL;
 	}
 
-	pr_info("unart: Registering manual device instance: "
-		"gpiochip=%s, rx_gpio=%d, tx_gpio=%d\n",
+	pr_info("unart: Registering manual device instance: gpiochip=%s, rx_gpio=%d, tx_gpio=%d\n",
 		gpiochip, rx_gpio, tx_gpio);
 
 	manual_pdev = platform_device_alloc("unart", PLATFORM_DEVID_NONE);
