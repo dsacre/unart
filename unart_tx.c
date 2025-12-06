@@ -127,8 +127,11 @@ size_t unart_tx_write_room(struct unart_tx *tx)
 	return kfifo_avail(&tx->fifo);
 }
 
-void unart_tx_wait_until_sent(struct unart_tx *tx, int timeout)
+void unart_tx_wait_until_sent(struct unart_tx *tx, long timeout)
 {
+	if (!timeout)
+		timeout = MAX_SCHEDULE_TIMEOUT;
+
 	wait_event_interruptible_timeout(
 			tx->wait_queue,
 			kfifo_is_empty_rawspinlocked(&tx->fifo, &tx->lock),

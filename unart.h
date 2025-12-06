@@ -93,7 +93,7 @@ int	unart_tx_setup(struct platform_device *pdev, struct unart_tx *tx);
 void	unart_tx_set_baud_rate(struct unart_tx *tx, unsigned int baudrate);
 ssize_t	unart_tx_write(struct unart_tx *tx, const u8 *buf, size_t count);
 size_t	unart_tx_write_room(struct unart_tx *tx);
-void	unart_tx_wait_until_sent(struct unart_tx *tx, int timeout);
+void	unart_tx_wait_until_sent(struct unart_tx *tx, long timeout);
 
 
 int	unart_tty_device_setup(struct platform_device *pdev, struct unart *unart);
